@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaulFever Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>PaulFever Management Portal</h1>
+            <nav>
+                <ul>
+                    <li><a href="#users">Users</a></li>
+                    <li><a href="#items">Items</a></li>
+                    <li><a href="#claims">Claims</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="welcome" class="card">
+            <h2>Welcome to PaulFever</h2>
+            <p>Select a module from the navigation to manage your system data.</p>
+        </section>
+
+        <!-- Placeholders for actual data integration -->
+        <section id="users" class="card module-section">
+            <h2>Users Management</h2>
+            <div style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+                <h3>Add User</h3>
+                <input type="text" id="userName" placeholder="Name" style="padding: 5px; margin-right: 5px;" required>
+                <input type="email" id="userEmail" placeholder="Email" style="padding: 5px; margin-right: 5px;" required>
+                <select id="userRole" style="padding: 5px; margin-right: 5px;">
+                    <option value="STUDENT">STUDENT</option>
+                    <option value="STAFF">STAFF</option>
+                    <option value="ADMIN">ADMIN</option>
+                </select>
+                <button class="primary-btn" onclick="addUser()">Add User</button>
+            </div>
+            <div id="usersList"></div>
+            <button class="primary-btn" onclick="fetchUsers()">Load Users</button>
+        </section>
+
+        <section id="items" class="card module-section">
+            <h2>Items Management</h2>
+            <div style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+                <h3>Add Item</h3>
+                <input type="text" id="itemTitle" placeholder="Title" style="padding: 5px; margin-right: 5px;" required>
+                <input type="text" id="itemDescription" placeholder="Description" style="padding: 5px; margin-right: 5px;">
+                <input type="text" id="itemCategory" placeholder="Category" style="padding: 5px; margin-right: 5px;">
+                <select id="itemType" style="padding: 5px; margin-right: 5px;">
+                    <option value="LOST">LOST</option>
+                    <option value="FOUND">FOUND</option>
+                </select>
+                <button class="primary-btn" onclick="addItem()">Add Item</button>
+            </div>
+            <div id="itemsList"></div>
+            <button class="primary-btn" onclick="fetchItems()">Load Items</button>
+        </section>
+
+        <section id="claims" class="card module-section">
+            <h2>Claims Management</h2>
+            <div style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+                <h3>Add Claim</h3>
+                <input type="number" id="claimItemId" placeholder="Item ID" style="padding: 5px; margin-right: 5px;" required>
+                <input type="number" id="claimUserId" placeholder="User ID" style="padding: 5px; margin-right: 5px;" required>
+                <input type="text" id="claimProof" placeholder="Proof Description" style="padding: 5px; margin-right: 5px;">
+                <button class="primary-btn" onclick="addClaim()">Add Claim</button>
+            </div>
+            <div id="claimsList"></div>
+            <button class="primary-btn" onclick="fetchClaims()">Load Claims</button>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 PaulFever. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
