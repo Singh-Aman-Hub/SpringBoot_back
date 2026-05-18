@@ -1,0 +1,16 @@
+.git
+.gitignore
+.vscode
+.idea
+.DS_Store
+
+# Ignore Maven build output locally, as we build inside the container
+target/
+.mvn/wrapper/maven-wrapper.jar
+
+# Ignore test files
+src/test/
+
+# Ignore environment variables/secrets
+.env
+.env.local
